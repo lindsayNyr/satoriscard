@@ -6,7 +6,7 @@ export const environment = {
         host: 'randomuser.me',
         endpoints: {
             user: '/api/?results=1',
-            users: 'api/?results=10'
+            users: '/api/?results=10'
         }
     }
 

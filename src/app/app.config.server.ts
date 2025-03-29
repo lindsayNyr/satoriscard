@@ -3,12 +3,14 @@ import { provideServerRendering } from '@angular/platform-server';
 import { provideServerRouting } from '@angular/ssr';
 import { appConfig } from './app.config';
 import { serverRoutes } from './app.routes.server';
+import { provideHttpClient, withXsrfConfiguration } from '@angular/common/http';
 
 const serverConfig: ApplicationConfig = {
   providers: [
     provideServerRendering(),
-    provideServerRouting(serverRoutes)
-  ]
+    provideServerRouting(serverRoutes),
+    provideHttpClient(),
+  ],
 };
 
 export const config = mergeApplicationConfig(appConfig, serverConfig);
